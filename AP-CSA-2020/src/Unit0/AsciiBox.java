@@ -3,10 +3,10 @@ package Unit0;
 //(c) A+ Computer Science
 //www.apluscompsci.com
 
-//Name -
-//Date -
-//Class -
-//Lab  -
+//Name - Andric Li
+//Date - 1/30/20
+//Class - APCSA
+//Lab  - AsciiArt
 
 public class AsciiBox {
 	public static void main(String[] args) {
