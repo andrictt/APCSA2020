@@ -26,7 +26,7 @@ public class MilesPerHour
 	public MilesPerHour(int dist, int hrs, int mins)
 	{
 		this.distance = dist;
-		this.hours = mins;
+		this.hours = hrs;
 		this.minutes = mins;
 	}
 
@@ -39,7 +39,8 @@ public class MilesPerHour
 
 	public void calcMPH()
 	{
-		mph = (double)(distance)/((double)(hours)+(double)(minutes/60));
+		double time = (double)(hours)+(minutes/(double)(60));
+		mph = distance/time;
 	}
 
 	public void print()
