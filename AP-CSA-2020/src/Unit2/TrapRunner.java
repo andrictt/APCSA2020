@@ -1,8 +1,8 @@
 package Unit2;
 
 //© A+ Computer Science  -  www.apluscompsci.com
-//Name -
-//Date -
+//Name - Andric Li
+//Date - 2/2/20
 //Class -
 //Lab  - 
 

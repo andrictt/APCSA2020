@@ -2,8 +2,8 @@ package Unit2;
 
 //(c) A+ Computer Science
 // www.apluscompsci.com
-//Name -
-//Date -
+//Name - Andric Li
+//Date - 2/2/20
 
 public class Cube
 {
