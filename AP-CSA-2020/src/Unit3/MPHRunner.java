@@ -16,18 +16,50 @@ public class MPHRunner
 {
 	public static void main( String[] args )
 	{
+		out.println("Enter the distance :: 45");
+		out.println("Enter the hours :: 0");
+		out.println("Enter the minutes :: 32");
+		MilesPerHour test = new MilesPerHour(45, 0, 32);
+		test.calcMPH();
+		test.print();
+		out.println();
+		
+		out.println("Enter the distance :: 96");
+		out.println("Enter the hours :: 1");
+		out.println("Enter the minutes :: 43");
+		test.setNums(96, 1, 43);
+		test.calcMPH();
+		test.print();
+		out.println();
+		
+		out.println("Enter the distance :: 100");
+		out.println("Enter the hours :: 2");
+		out.println("Enter the minutes :: 25");
+		test.setNums(100, 2, 25);
+		test.calcMPH();
+		test.print();
+		out.println();
+		
+		out.println("Enter the distance :: 50");
+		out.println("Enter the hours :: 2");
+		out.println("Enter the minutes :: 25");
+		test.setNums(50, 2, 25);
+		test.calcMPH();
+		test.print();
+		out.println();
+		
 		Scanner keyboard = new Scanner(in);
-
-		out.print("Enter the distance :: ");
+		
+		out.println("Enter the distance :: ");
 		int dist = keyboard.nextInt();
 
-		out.print("Enter the hours :: ");
+		out.println("Enter the hours :: ");
 		int hrs = keyboard.nextInt();
 
-		out.print("Enter the minutes :: ");
+		out.println("Enter the minutes :: ");
 		int mins = keyboard.nextInt();
 
-		MilesPerHour test = new MilesPerHour(dist, hrs, mins);
+		test.setNums(dist, hrs, mins);
 		test.calcMPH();
 		test.print();
 		

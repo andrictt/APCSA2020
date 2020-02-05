@@ -53,13 +53,13 @@ public class Distance
 	
 	public void print()
 	{
-		System.out.println(distance);
+		System.out.printf("distance == %.3f", distance);
 	}
 	
 	//complete print or the toString
 
 	public String toString()
 	{
-		return Double.toString(distance);
+		return "distance == " + String.format("%.3f", distance);
 	}
 }
