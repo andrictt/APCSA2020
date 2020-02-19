@@ -216,4 +216,7 @@ public class Review {
     // return number of stars
     return stars; 
   }
+  public static String fakeReview(String fileName) {
+	  
+  }
 }
