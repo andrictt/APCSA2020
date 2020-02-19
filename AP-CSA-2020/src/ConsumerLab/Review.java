@@ -39,7 +39,7 @@ public class Review {
       Scanner input = new Scanner(new File("src/ConsumerLab/positiveAdjectives.txt"));
       while(input.hasNextLine()){
         String temp = input.nextLine().trim();
-        System.out.println(temp);
+        //System.out.println(temp);
         posAdjectives.add(temp);
       }
       input.close();
@@ -157,6 +157,7 @@ public class Review {
     // read in the file contents into a string using the textToString method with the filename
 	  String hey = textToString(filename);
 	  hey = hey.replaceAll("/", " ");
+	  hey = hey.replaceAll("\\*", "");
 	  hey = hey.replaceAll(":", "");
 	  hey = hey.replaceAll("\\)", "");
 	  hey = hey.replaceAll("\\(", "");
@@ -217,6 +218,84 @@ public class Review {
     return stars; 
   }
   public static String fakeReview(String fileName) {
-	  
+	  String hey = textToString(fileName);
+	  String fake = "";
+	  int lastSpace = 0;
+	  for(int i = hey.length() - 1; i >= 0; i--) {
+		  if(hey.charAt(i) == ' ') {
+			  lastSpace = i;
+			  break;
+		  }
+	  }
+    // loop through the file contents 
+	  for(int i = 0; i < hey.length() - hey.substring(lastSpace, hey.length() - 1).length(); i++) {
+	       // find each word
+		  String temp = hey.substring(i, hey.indexOf(" ", i));
+		  if(temp.charAt(temp.length() - 1) == '.' || temp.charAt(temp.length() - 1) == '!' || temp.charAt(temp.length() - 1) == ',') {
+			  temp = temp.substring(0, temp.length() - 1);
+			  i++;
+		  }
+	       // set the file contents to start after this word
+		  i += temp.length();
+		  if(temp.charAt(0) == '*') {
+			  temp = randomAdjective();
+		  }
+		  fake += temp + " ";
+	  }
+	  return fake;
+  }
+  public static String positiveReview(String fileName) {
+	  String hey = textToString(fileName);
+	  String fake = "";
+	  int lastSpace = 0;
+	  for(int i = hey.length() - 1; i >= 0; i--) {
+		  if(hey.charAt(i) == ' ') {
+			  lastSpace = i;
+			  break;
+		  }
+	  }
+    // loop through the file contents 
+	  for(int i = 0; i < hey.length() - hey.substring(lastSpace, hey.length() - 1).length(); i++) {
+	       // find each word
+		  String temp = hey.substring(i, hey.indexOf(" ", i));
+		  if(temp.charAt(temp.length() - 1) == '.' || temp.charAt(temp.length() - 1) == '!' || temp.charAt(temp.length() - 1) == ',') {
+			  temp = temp.substring(0, temp.length() - 1);
+			  i++;
+		  }
+	       // set the file contents to start after this word
+		  i += temp.length();
+		  if(temp.charAt(0) == '*') {
+			  temp = randomPositiveAdj();
+		  }
+		  fake += temp + " ";
+	  }
+	  return fake;
+  }
+  public static String negativeReview(String fileName) {
+	  String hey = textToString(fileName);
+	  String fake = "";
+	  int lastSpace = 0;
+	  for(int i = hey.length() - 1; i >= 0; i--) {
+		  if(hey.charAt(i) == ' ') {
+			  lastSpace = i;
+			  break;
+		  }
+	  }
+    // loop through the file contents 
+	  for(int i = 0; i < hey.length() - hey.substring(lastSpace, hey.length() - 1).length(); i++) {
+	       // find each word
+		  String temp = hey.substring(i, hey.indexOf(" ", i));
+		  if(temp.charAt(temp.length() - 1) == '.' || temp.charAt(temp.length() - 1) == '!' || temp.charAt(temp.length() - 1) == ',') {
+			  temp = temp.substring(0, temp.length() - 1);
+			  i++;
+		  }
+	       // set the file contents to start after this word
+		  i += temp.length();
+		  if(temp.charAt(0) == '*') {
+			  temp = randomNegativeAdj();
+		  }
+		  fake += temp + " ";
+	  }
+	  return fake;
   }
 }
