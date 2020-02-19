@@ -244,6 +244,7 @@ public class Review {
 	  }
 	  return fake;
   }
+  
   public static String positiveReview(String fileName) {
 	  String hey = textToString(fileName);
 	  String fake = "";
@@ -264,13 +265,14 @@ public class Review {
 		  }
 	       // set the file contents to start after this word
 		  i += temp.length();
-		  if(temp.charAt(0) == '*') {
+		  if(temp.charAt(0) == '*' && sentimentVal(temp.replaceAll("\\*", "")) <= 0) {
 			  temp = randomPositiveAdj();
 		  }
 		  fake += temp + " ";
 	  }
-	  return fake;
+	  return fake.replaceAll("\\*", "");
   }
+  
   public static String negativeReview(String fileName) {
 	  String hey = textToString(fileName);
 	  String fake = "";
@@ -291,11 +293,11 @@ public class Review {
 		  }
 	       // set the file contents to start after this word
 		  i += temp.length();
-		  if(temp.charAt(0) == '*') {
+		  if(temp.charAt(0) == '*' && sentimentVal(temp.replaceAll("\\*", "")) >= 0) {
 			  temp = randomNegativeAdj();
 		  }
 		  fake += temp + " ";
 	  }
-	  return fake;
+	  return fake.replaceAll("\\*", "");
   }
 }
