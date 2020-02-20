@@ -51,6 +51,6 @@ public class Triples
 	public String toString()
 	{
 		pythagTriples(number);
-		return null;
+		return "";
 	}
 }
