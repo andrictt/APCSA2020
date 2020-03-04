@@ -63,7 +63,19 @@ public class Shuffler {
 	 */
 	public static void perfectShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
-		
+		int[] temp = new int[values.length];
+		int counter = 0;
+		for (int i = 0; i < temp.length; i+= 2) {
+			temp[counter] = values[i];
+			counter++;
+		}
+		for (int i = 1; i < temp.length; i+= 2) {
+			temp[counter] = values[i];
+			counter++;
+		}
+		for (int i = 0; i < temp.length; i++) {
+			values[i] = temp[i];
+		}
 	}
 
 	/**
@@ -79,5 +91,12 @@ public class Shuffler {
 	 */
 	public static void selectionShuffle(int[] values) {
 		/* *** TO BE IMPLEMENTED IN ACTIVITY 3 *** */
+		for (int i = values.length - 1; i > 0; i--) {
+			int pos = (int) (Math.random() * (i + 1));  // range 0 to k, inclusive
+			int temp = values[pos];
+			values[pos] = values[i];
+			values[i] = temp;
+		}
 	}
+	
 }
