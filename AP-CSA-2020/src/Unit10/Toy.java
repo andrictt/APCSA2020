@@ -15,30 +15,33 @@ public class Toy
 	{
 	}
 
-	public Toy( String nm )
+	public Toy(String nm)
 	{
+		this.name = nm;
 	}
 	
 	public int getCount()
 	{
-		return 0;
+		return count;
 	}
 	
 	public void setCount( int cnt )
 	{
+		this.count = cnt;
 	}
 	
 	public String getName()
 	{
-		return null;
+		return name;
 	}
 	
 	public void setName( String nm )
 	{
+		this.name = nm;
 	}
 
 	public String toString()
 	{
-	   return "";
+	   return getName()+ " "+ getCount();
 	}
 }
