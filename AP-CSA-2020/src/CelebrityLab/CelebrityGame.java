@@ -57,17 +57,21 @@ public class CelebrityGame
 	private int count = 0;
 	public boolean processGuess(String guess)
 	{
-		if(guess.trim().equalsIgnoreCase(gameCelebrity.getAnswer())) {
-			count++;
-			if(celebGameList.get(count) != null) {
-				gameCelebrity = celebGameList.get(count);
-			}
-			else {
-				gameCelebrity = new Celebrity ("","");
-			}
-			return true;
+		boolean matches = false;
+		/*
+		* Why use the .trim() method on the supplied String parameter? What
+		* would need to be done to support a score?
+		*/
+		if (guess.trim().equalsIgnoreCase(gameCelebrity.getAnswer()))
+		{
+		matches = true;
+		celebGameList.remove(0);
+		if (celebGameList.size() > 0)
+		{
+		gameCelebrity = celebGameList.get(0);
 		}
-		return false;
+		}
+		return matches;
 	}
 
 	/**
@@ -96,7 +100,15 @@ public class CelebrityGame
 	 */
 	public void addCelebrity(String name, String guess, String type)
 	{
-		celebGameList.add(new Celebrity(name, guess));
+		if(type.equals("Literature")) {
+			celebGameList.add(new LiteratureCelebrity(name, guess));
+		}
+		else if(type.equals("Sports")) {
+			celebGameList.add(new SportsCelebrity(name, guess));
+		}
+		else{
+			celebGameList.add(new Celebrity(name, guess));
+		}
 	}
 
 	/**
@@ -121,10 +133,25 @@ public class CelebrityGame
 	 */
 	public boolean validateClue(String clue, String type)
 	{
-		if(clue.trim().length() > 9) {
-			return true;
+		boolean validClue = false;
+		if (clue.trim().length() >= 10)
+		{
+		validClue = true;
+		if (type.equalsIgnoreCase("lit terature"))
+		{
+		String[] temp = clue.split(",");
+		if (temp.length > 1)
+		{
+		validClue = true;
 		}
-		return false;
+		else
+		{
+		validClue = false;
+		}
+		}
+		//You will need to add an else if condition here fo or your subclass
+		}
+		return validClue;
 	}
 
 	/**

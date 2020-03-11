@@ -13,7 +13,7 @@ public class CelebrityRunner
 	 */
 	public static void main(String [] args)
 	{
-		Celebrity celeb = new Celebrity("Dicaprio", "Titanic");
-		System.out.println(celeb);
+		CelebrityGame celebGame = new CelebrityGame();
+		celebGame.prepareGame();
 	}
 }
