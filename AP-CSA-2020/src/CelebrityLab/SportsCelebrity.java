@@ -5,9 +5,18 @@ import java.util.ArrayList;
 public class SportsCelebrity extends Celebrity{
 
 	private ArrayList<String> clueList;
-	public SportsCelebrity(String answer, String clue) {
-		super(answer, clue);
+
+	/**
+	 * Builds a LiteratureCelebrity instance with an answer and a series of clues as a String separated by commas.
+	 * @param answer The literature celebrity
+	 * @param clues Clues for the literature celebrity 
+	 */
+	public SportsCelebrity(String answer, String clues)
+	{
+		super(answer, clues);
+		processClues();
 	}
+	
 	/**
 	 * Processes the series of clues for the LiteratureCelebrity by adding all the values to an ArrayList<String> by
 	 * splitting the original clue to an array of String.
@@ -43,7 +52,7 @@ public class SportsCelebrity extends Celebrity{
 	@Override
 	public String toString()
 	{
-		String dsc = "This is the sports celebrity: " + getAnswer() + "\nThe clues are:\n";
+		String dsc = "This is the Sports celebrity: " + getAnswer() + "\nThe clues are:\n";
 		
 		for (String word : super.getClue().split(","))
 		{
