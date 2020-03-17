@@ -6,8 +6,8 @@ import core.data.DataSource;
 
 public class BabyNamesRunner {
 	public static void main(String[] args) {
-		DataSource ds = DataSource.connect("https://data.cityofnewyork.us/resource/25th-nujf.json").load();
-		ArrayList<BabyNames> babies = ds.fetchList(BabyNames.class, "brth_yr", "gndr", "ethcty", "nm", "cnt", "rnk");
+		DataSource ds = DataSource.connect("https://data.cityofnewyork.us/api/views/25th-nujf/rows.xml").load();
+		ArrayList<BabyNames> babies = ds.fetchList(BabyNames.class, "row/row/brth_yr", "row/row/gndr", "row/row/ethcty", "row/row/nm", "row/row/cnt", "row/row/rnk");
 		System.out.println("Total baby names: " + babies.size());
 
 		int max = 0;
