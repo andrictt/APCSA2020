@@ -1,7 +1,7 @@
 package DataLab;
 
 public class BabyNames {
-	
+	//instance variables
 	int birthYear;
 	String gender;
 	String ethnicity;
@@ -17,7 +17,7 @@ public class BabyNames {
 		count = c;
 		rank = r;
 	}
-
+//getters and setters
 	public int getBirthYear() {
 		return birthYear;
 	}
