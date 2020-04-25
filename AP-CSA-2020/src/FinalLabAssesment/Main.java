@@ -15,10 +15,14 @@ public class Main {
 			int temp = file.nextInt();
 			for(int j = 0; j < temp; j++) {
 				tree.getApple(i).addSeed(file.nextInt());
-				System.out.println(tree.getApple(i).getSeed(j));
 			}
-			System.out.println(tree.getApple(i));
+			tree.getApple(i).sortSeeds();
+			System.out.print(tree.getApple(i));
+			System.out.println("Index of seed size 4: " + tree.getApple(i).binarySearch(0, tree.getApple(i).getSeedCount(), 4) + "\n");
 		}
 		System.out.print(tree);
+		tree.sortApples();
+		System.out.println(tree);
+		System.out.println("Index of apple size 4: " + tree.binarySearch(0, tree.getAppleCount(), 11));
 	}
 }

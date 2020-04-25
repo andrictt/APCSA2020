@@ -38,7 +38,33 @@ public class Apple {
 		}
 		return count/getSeedCount();
 	}
+
+	public void sortSeeds() {
+		for (int i = 0; i < seeds.size(); i++) {
+			for (int j = 0; j < seeds.size() - 1; j++) {
+				if(seeds.get(j).getSize() > seeds.get(j + 1).getSize()) {
+					Seed temp = seeds.get(j);
+					seeds.set(j, seeds.get(j+1));
+					seeds.set(j + 1, temp);
+				}
+			}
+		}
+	}
+	int binarySearch(int l, int r, int x) 
+    { 
+        if (r >= l) { 
+            int mid = l + (r - l) / 2; 
+            if (seeds.get(mid).getSize() == x) 
+                return mid;
+            if (seeds.get(mid).getSize() > x) 
+                return binarySearch(l, mid - 1, x); 
+            return binarySearch(mid + 1, r, x); 
+        }
+        return -1; 
+    }
 	public String toString() {
-		return "Apple Size: " + size + "\nNumber of Seeds in apple: " + getSeedCount() + "\nAverage Seed Size in apple: " + averageSeedSize();
+		System.out.println("Apple Size: " + size + "\nNumber of Seeds in apple: " + getSeedCount() + "\nAverage Seed Size in apple: " + averageSeedSize());
+		System.out.println(seeds);
+		return "";
 	}
 }
