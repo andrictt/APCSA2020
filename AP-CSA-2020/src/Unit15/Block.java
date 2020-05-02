@@ -85,12 +85,12 @@ public class Block implements Locatable {
 		window.fillRect(getX(), getY(), getWidth(), getHeight());
 	}
 
-	private int getHeight() {
+	public int getHeight() {
 		// TODO Auto-generated method stub
 		return height;
 	}
 
-	private int getWidth() {
+	public int getWidth() {
 		// TODO Auto-generated method stub
 		return width;
 	}

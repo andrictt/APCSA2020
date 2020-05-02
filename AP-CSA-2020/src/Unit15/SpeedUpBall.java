@@ -15,13 +15,13 @@ class SpeedUpBall extends Ball
 
    public SpeedUpBall()
    {
-
-
+	   super();
    }
 
    public SpeedUpBall(int x, int y)
    {
 
+	   super(x, y);
 
    }
 
@@ -29,12 +29,7 @@ class SpeedUpBall extends Ball
    public SpeedUpBall(int x, int y, int xSpd, int ySpd)
    {
 
-
-   }
-
-   public SpeedUpBall(int x, int y, int wid, int ht, int xSpd, int ySpd)
-   {
-
+	   super(x, y, xSpd, ySpd);
 
    }
 
@@ -43,6 +38,7 @@ class SpeedUpBall extends Ball
    {
 
 
+	   super(x, y, wid, ht, col, xSpd, ySpd);
 
 
    }
@@ -51,6 +47,7 @@ class SpeedUpBall extends Ball
    {
 
 
+	   super.setXSpeed(xSpd);
 
 
    }
@@ -58,6 +55,7 @@ class SpeedUpBall extends Ball
    public void setYSpeed( int ySpd )
    {
 
+	   super.setYSpeed(ySpd);
 
 
 
